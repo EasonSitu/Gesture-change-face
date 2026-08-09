@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>Finger Frame MVP</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310131b'/%3E%3Cpath d='M32 8 8 32l24 24 24-24z' fill='none' stroke='%23ff6379' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%2373f7d2'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CANVAS / MEDIAPIPE PLAYGROUND</p>
+          <h1>Finger Frame</h1>
+        </div>
+        <span class="mode-chip" id="mode-chip">Camera mode</span>
+      </header>
+
+      <section class="stage-card" aria-label="实时摄像头画布">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="face-canvas" aria-hidden="true"></canvas>
+        <canvas id="canvas"></canvas>
+        <div class="stage-status" id="stage-status">
+          <span class="spinner" aria-hidden="true"></span>
+          <strong id="status-title">正在准备手部追踪…</strong>
+          <p id="status-detail">首次加载会在浏览器中下载 MediaPipe 模型。</p>
+          <button class="secondary-button hidden" id="retry-button" type="button">重新尝试</button>
+        </div>
+        <div class="gesture-hint" id="gesture-hint">
+          <span class="hint-dot"></span>
+          I/T 标出指尖；双手捏一下切换滤镜，也可以切换四个人物滤镜
+        </div>
+        <div class="effect-toast" id="effect-toast" aria-live="polite"></div>
+      </section>
+
+      <section class="controls" aria-label="特效选择">
+        <div>
+          <p class="section-label">EFFECTS</p>
+          <div class="toolbar" id="toolbar"></div>
+        </div>
+        <div class="control-actions">
+          <a class="secondary-button" href="?demo">打开无摄像头 Demo</a>
+          <button class="secondary-button" id="retry-camera-button" type="button">重新请求摄像头</button>
+        </div>
+      </section>
+
+      <footer class="footer-note">
+        <span>按 1–9 切换效果</span>
+        <span>画面只在浏览器本地处理</span>
+        <span>人物滤镜不需要 API key</span>
+        <span>正式部署需要 HTTPS</span>
+      </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/gh/jeeliz/jeelizFaceFilter@master/libs/three/v97/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeeliz/jeelizFaceFilter@master/dist/jeelizFaceFilter.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeeliz/jeelizFaceFilter@master/helpers/JeelizThreeHelper.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

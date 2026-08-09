@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.chrome-profile*/
+output/
+docs/superpowers/
+demo-screenshot.png
+demo-points-screenshot.png

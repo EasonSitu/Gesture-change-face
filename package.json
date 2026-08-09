@@ -1,0 +1,8 @@
+{
+  "name": "finger-frame-mvp",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/geometry.test.mjs test/gestures.test.mjs test/character-filters.test.mjs test/frame-composite.test.mjs"
+  }
+}
