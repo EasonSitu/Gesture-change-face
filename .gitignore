@@ -5,3 +5,5 @@ output/
 docs/superpowers/
 demo-screenshot.png
 demo-points-screenshot.png
+# Local-only files from the removed sound experiment.
+assets/sfx/
