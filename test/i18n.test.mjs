@@ -33,9 +33,13 @@ test("translates categories, effects, and interface messages", () => {
   assert.equal(getEffectLabel("zh-CN", "sketch"), "线稿");
   assert.equal(getEffectLabel("zh-TW", "sketch"), "線稿");
   assert.equal(getEffectLabel("en", "sketch"), "Sketch");
-  assert.equal(getMessage("zh-CN", "status.loadingEffectTitle"), "正在加载效果…");
-  assert.equal(getMessage("zh-TW", "status.loadingEffectTitle"), "正在載入效果…");
-  assert.equal(getMessage("en", "status.loadingEffectTitle"), "Loading effect…");
+  assert.equal(getMessage("zh-CN", "status.loadingEffectTitle"), "正在准备效果…");
+  assert.equal(getMessage("zh-TW", "status.loadingEffectTitle"), "正在準備效果…");
+  assert.equal(getMessage("en", "status.loadingEffectTitle"), "Preparing effect…");
+  assert.equal(getMessage("zh-CN", "status.loadingEffectDetail"), "正在把「{effect}」放进画框。");
+  assert.equal(getMessage("zh-TW", "controls.gestureNote"), "雙手捏合換效果，也可以直接點選。");
+  assert.equal(getMessage("en", "controls.pinchEnabled"), "Enable pinch switching");
+  assert.equal(getMessage("zh-CN", "document.stageLabel"), "互动画面");
   assert.equal(getMessage("en", "controls.capture"), "Save in 3 seconds");
   assert.equal(getMessage("zh-CN", "document.title"), "魔法画框 · FrameShift");
 });

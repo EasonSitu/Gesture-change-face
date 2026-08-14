@@ -21,7 +21,7 @@
             <button class="locale-button" type="button" data-locale="zh-TW" aria-pressed="false" aria-label="繁體中文" title="繁體中文">繁</button>
             <button class="locale-button" type="button" data-locale="en" aria-pressed="false" aria-label="English" title="English">EN</button>
           </div>
-          <button class="help-button" id="help-button" type="button" aria-haspopup="dialog" aria-controls="help-dialog" aria-label="使用帮助" title="使用帮助">?</button>
+          <button class="help-button" id="help-button" type="button" aria-haspopup="dialog" aria-controls="help-dialog" aria-label="帮助" title="帮助">?</button>
           <button class="fullscreen-button" id="fullscreen-button" type="button" aria-pressed="false" aria-label="进入全屏" title="进入全屏">
             <span class="fullscreen-icon" aria-hidden="true"></span>
             <span id="fullscreen-label" data-i18n="controls.fullscreen">全屏</span>
@@ -29,14 +29,14 @@
         </div>
       </header>
 
-      <section class="stage-card" data-i18n-attr="aria-label:document.stageLabel" aria-label="实时画面">
+      <section class="stage-card" data-i18n-attr="aria-label:document.stageLabel" aria-label="互动画面">
         <video id="video" autoplay playsinline muted></video>
         <canvas id="face-canvas" aria-hidden="true"></canvas>
         <canvas id="canvas"></canvas>
         <div class="stage-status" id="stage-status">
           <span class="spinner" aria-hidden="true"></span>
-          <strong id="status-title" data-i18n="status.loadingTitle">正在准备画面…</strong>
-          <p id="status-detail" data-i18n="status.loadingDetail">第一次打开可能需要几秒。</p>
+          <strong id="status-title" data-i18n="status.loadingTitle">正在准备体验…</strong>
+          <p id="status-detail" data-i18n="status.loadingDetail">首次打开可能需要几秒，之后会更快。</p>
           <div class="loading-meter hidden" id="loading-meter">
             <div
               class="loading-progress"
@@ -46,13 +46,13 @@
               aria-valuemax="100"
               aria-valuenow="0"
               data-i18n-attr="aria-label:status.loadingProgressLabel"
-              aria-label="加载进度"
+              aria-label="准备进度"
             >
               <span id="loading-progress-bar"></span>
             </div>
             <span class="loading-progress-value" id="loading-progress-value">0%</span>
           </div>
-          <button class="secondary-button hidden" id="retry-button" data-i18n="status.retry" type="button">重新尝试</button>
+          <button class="secondary-button hidden" id="retry-button" data-i18n="status.retry" type="button">再试一次</button>
         </div>
         <div class="effect-toast" id="effect-toast" aria-live="polite"></div>
         <div class="capture-countdown" id="capture-countdown" aria-live="assertive" aria-hidden="true"></div>
@@ -63,18 +63,18 @@
         <a class="secondary-button" id="mode-toggle-button" data-mode-toggle data-i18n="controls.enableCamera" href="?lang=zh-CN">启用摄像头</a>
       </div>
 
-      <section class="controls" data-i18n-attr="aria-label:controls.effects" aria-label="选择效果">
+      <section class="controls" data-i18n-attr="aria-label:controls.effects" aria-label="效果">
         <div class="effect-picker">
-          <p class="section-label" data-i18n="controls.effects">选择效果</p>
+          <p class="section-label" data-i18n="controls.effects">效果</p>
           <div class="toolbar" id="toolbar"></div>
-          <div class="gesture-settings" data-i18n-attr="aria-label:controls.gestureSettings" aria-label="捏合设置">
+          <div class="gesture-settings" data-i18n-attr="aria-label:controls.gestureSettings" aria-label="捏合切换设置">
             <div class="gesture-settings-heading">
-              <p class="section-label" data-i18n="controls.gestureControl">怎么玩？</p>
-              <p class="control-note" data-i18n="controls.gestureNote">双手捏合切换，也可以直接点击</p>
+              <p class="section-label" data-i18n="controls.gestureControl">操作方式</p>
+              <p class="control-note" data-i18n="controls.gestureNote">双手捏合换效果，也可以直接点选。</p>
             </div>
             <label class="toggle-control">
               <input id="pinch-toggle" type="checkbox" checked />
-              <span data-i18n="controls.pinchEnabled">捏合切换</span>
+              <span data-i18n="controls.pinchEnabled">启用捏合切换</span>
             </label>
             <div class="pinch-category-controls" id="pinch-category-controls"></div>
           </div>
@@ -85,10 +85,10 @@
         <button class="help-dialog-scrim" type="button" data-help-close aria-label="关闭帮助"></button>
         <div class="help-dialog-panel">
           <div class="help-dialog-header">
-            <h2 id="help-title">怎么玩？</h2>
+            <h2 id="help-title">怎么用？</h2>
             <button class="help-close-button" id="help-close-button" type="button" aria-label="关闭帮助">×</button>
           </div>
-          <img id="help-image" class="help-image" src="assets/help/frameshift-help-a.png" alt="双手框住画面，再捏合切换效果的示意图" />
+          <img id="help-image" class="help-image" src="assets/help/frameshift-help-a.png" alt="双手框住画面，再捏合切换效果" />
           <div class="help-steps">
             <div class="help-step">
               <span class="help-step-number">1</span>

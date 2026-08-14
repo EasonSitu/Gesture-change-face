@@ -3,6 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test test/geometry.test.mjs test/gestures.test.mjs test/character-filters.test.mjs test/character-renderer.test.mjs test/demo-scene.test.mjs test/frame-composite.test.mjs test/meshy-assets.test.mjs test/navigation.test.mjs test/brightness.test.mjs test/effects.test.mjs test/cartoon-effect.test.mjs test/canny-effect.test.mjs test/opencv-loader.test.mjs test/pinch-settings.test.mjs test/capture.test.mjs test/runtime-loader.test.mjs test/themes.test.mjs test/i18n.test.mjs test/layout.test.mjs test/help.test.mjs test/ui-contract.test.mjs"
+    "test": "node --test test/geometry.test.mjs test/gestures.test.mjs test/character-filters.test.mjs test/character-renderer.test.mjs test/demo-scene.test.mjs test/frame-composite.test.mjs test/meshy-assets.test.mjs test/navigation.test.mjs test/brightness.test.mjs test/effects.test.mjs test/cartoon-effect.test.mjs test/canny-effect.test.mjs test/opencv-loader.test.mjs test/pinch-settings.test.mjs test/capture.test.mjs test/runtime-loader.test.mjs test/themes.test.mjs test/i18n.test.mjs test/layout.test.mjs test/help.test.mjs test/ui-contract.test.mjs test/documentation-contract.test.mjs"
   }
 }

@@ -33,7 +33,7 @@ import {
   getSourceImageFilter,
 } from "./src/brightness.mjs?v=20260811-5";
 import { getStageAspectRatio } from "./src/layout.mjs?v=20260811-1";
-import { HELP_IMAGE_SRC, getHelpContent } from "./src/help.mjs?v=20260812-1";
+import { HELP_IMAGE_SRC, getHelpContent } from "./src/help.mjs?v=20260814-2";
 import {
   getCategoryLabel,
   getEffectLabel as getLocalizedEffectLabel,
@@ -41,7 +41,7 @@ import {
   getMessage,
   LOCALE_OPTIONS,
   normalizeLocale,
-} from "./src/i18n.mjs?v=20260813-2";
+} from "./src/i18n.mjs?v=20260814-2";
 import { getModeToggleState } from "./src/mode-toggle.mjs?v=20260814-1";
 
 const WASM_URL = "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm";
