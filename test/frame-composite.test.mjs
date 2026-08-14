@@ -11,7 +11,7 @@ function createContextSpy() {
     moveTo: (...args) => calls.push(["moveTo", ...args]),
     lineTo: (...args) => calls.push(["lineTo", ...args]),
     closePath: () => calls.push(["closePath"]),
-    clip: () => calls.push(["clip"]),
+    clip: (...args) => calls.push(["clip", ...args]),
     translate: (...args) => calls.push(["translate", ...args]),
     scale: (...args) => calls.push(["scale", ...args]),
     drawImage: (...args) => calls.push(["drawImage", ...args]),
@@ -29,7 +29,7 @@ test("draws the character canvas mirrored and clipped to the hand frame", () => 
     { x: 10, y: 220 },
   ];
 
-  assert.equal(drawMirroredClippedImage(ctx, source, quad, 320, 240), true);
+  assert.equal(drawMirroredClippedImage(ctx, source, quad, 320, 240, "evenodd"), true);
   assert.deepEqual(calls, [
     ["save"],
     ["beginPath"],
@@ -38,7 +38,7 @@ test("draws the character canvas mirrored and clipped to the hand frame", () => 
     ["lineTo", 110, 220],
     ["lineTo", 10, 220],
     ["closePath"],
-    ["clip"],
+    ["clip", "evenodd"],
     ["translate", 320, 0],
     ["scale", -1, 1],
     ["drawImage", source, 0, 0, 320, 240],

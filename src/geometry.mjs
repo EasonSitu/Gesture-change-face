@@ -26,6 +26,38 @@ export function polygonArea(points) {
   return Math.abs(area / 2);
 }
 
+function orientation(a, b, c) {
+  const value = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+  if (Math.abs(value) < 1e-7) return 0;
+  return value > 0 ? 1 : -1;
+}
+
+function onSegment(a, b, point) {
+  return point.x >= Math.min(a.x, b.x) - 1e-7
+    && point.x <= Math.max(a.x, b.x) + 1e-7
+    && point.y >= Math.min(a.y, b.y) - 1e-7
+    && point.y <= Math.max(a.y, b.y) + 1e-7;
+}
+
+function segmentsIntersect(a, b, c, d) {
+  const first = orientation(a, b, c);
+  const second = orientation(a, b, d);
+  const third = orientation(c, d, a);
+  const fourth = orientation(c, d, b);
+
+  if (first === 0 && onSegment(a, b, c)) return true;
+  if (second === 0 && onSegment(a, b, d)) return true;
+  if (third === 0 && onSegment(c, d, a)) return true;
+  if (fourth === 0 && onSegment(c, d, b)) return true;
+  return first !== second && third !== fourth;
+}
+
+export function isSelfIntersectingQuad(points) {
+  if (!Array.isArray(points) || points.length !== 4) return false;
+  return segmentsIntersect(points[0], points[1], points[2], points[3])
+    || segmentsIntersect(points[1], points[2], points[3], points[0]);
+}
+
 function angleSort(points) {
   const center = points.reduce(
     (sum, point) => ({ x: sum.x + point.x / points.length, y: sum.y + point.y / points.length }),
