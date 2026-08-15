@@ -4,9 +4,13 @@
 
 这是一个打开网页就能体验的浏览器互动影像工具。摄像头、手势识别和画面处理默认都在浏览器本地完成，不需要注册账号，也不需要 API key。
 
-## 本地体验
+## 先体验
 
+- [在线体验](https://easonsitu.github.io/Gesture-change-face/)
+- [无摄像头示例](https://easonsitu.github.io/Gesture-change-face/?demo)
 - [项目仓库](https://github.com/EasonSitu/Gesture-change-face)
+
+在线体验由 GitHub Pages 提供，打开后摄像头、手势识别和画面处理仍在浏览器本地完成。
 
 本地运行时，在项目目录启动一个静态文件服务器：
 
