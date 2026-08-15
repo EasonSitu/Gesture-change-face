@@ -10,12 +10,13 @@ function read(relativePath) {
   return fs.readFileSync(path.join(projectRoot, relativePath), "utf8");
 }
 
-test("documents the current product surface and online entry points", () => {
+test("documents the current product surface and local entry points", () => {
   const readme = read("README.md");
-  assert.match(readme, /https:\/\/easonsitu\.github\.io\/Gesture-change-face\//);
   assert.match(readme, /当前共有 14 个效果/);
   assert.match(readme, /无摄像头示例/);
   assert.match(readme, /双手捏合/);
+  assert.match(readme, /本地体验/);
+  assert.match(readme, /localhost:8123/);
   assert.doesNotMatch(readme, /三个新增滤镜的代码接入口/);
   assert.doesNotMatch(readme, /请通过每个 Meshy 模型页面的正常导出流程/);
 });

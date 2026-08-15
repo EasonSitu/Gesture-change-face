@@ -4,10 +4,8 @@
 
 这是一个打开网页就能体验的浏览器互动影像工具。摄像头、手势识别和画面处理默认都在浏览器本地完成，不需要注册账号，也不需要 API key。
 
-## 先体验
+## 本地体验
 
-- [在线体验](https://easonsitu.github.io/Gesture-change-face/)
-- [无摄像头示例](https://easonsitu.github.io/Gesture-change-face/?demo)
 - [项目仓库](https://github.com/EasonSitu/Gesture-change-face)
 
 本地运行时，在项目目录启动一个静态文件服务器：
@@ -71,21 +69,10 @@ py -m http.server 8123
 
 - 摄像头画面只在当前浏览器中处理，项目没有上传摄像头画面的接口。
 - 不需要登录、后端数据库或 API key。服务器只负责返回 HTML、JavaScript、CSS 和静态资源。
-- 摄像头模式需要浏览器权限；本地 `localhost` 可以直接测试，正式部署应使用 HTTPS。
+- 摄像头模式需要浏览器权限；在本地 `localhost` 中即可直接测试。
 - MediaPipe、手部模型和部分运行库默认从公共 CDN 加载，因此首次打开需要网络连接。重型人物资源、面具模型和 OpenCV.js 会按需加载。
 - 当前版本没有发布音效功能，交互反馈通过画面、提示、倒计时和按钮状态完成。
-- 这不是云端 AI 换脸或视频上传产品；当前重点是浏览器端实时互动、可理解的操作流程和静态部署能力。
-
-## 部署
-
-这是纯静态网站，可以部署到 GitHub Pages、Netlify、对象存储或任何支持静态文件的服务器。仓库已经包含 GitHub Pages 工作流：`.github/workflows/pages.yml` 会把项目根目录发布为站点。
-
-部署时需要注意：
-
-- 为摄像头模式配置 HTTPS；
-- 保留 `assets/` 下的本地模型、纹理和帮助图片；
-- 如果要完全自托管 CDN 运行库，需要把对应资源下载到站点内，并修改 `main.js`、`src/runtime-loader.mjs` 和 `src/character-renderer.mjs` 中的地址；
-- 如果替换戏曲面具模型，先核对来源页的作者和许可，再按 `assets/meshy/README.md` 的文件名替换。
+- 这不是云端 AI 换脸或视频上传产品；当前重点是浏览器端实时互动、可理解的操作流程和本地体验。
 
 ## 测试
 
